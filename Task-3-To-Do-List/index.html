@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>TaskFlow - To-Do List</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- HEADER -->
+        <header>
+
+            <div>
+                <h1>
+                    <i class="fa-solid fa-list-check"></i>
+                    TaskFlow
+                </h1>
+
+                <p>Organize your day, one task at a time.</p>
+            </div>
+
+            <button id="themeToggle" class="theme-btn" title="Toggle Dark Mode">
+                <i class="fa-solid fa-moon"></i>
+            </button>
+
+        </header>
+
+
+        <!-- TASK FORM -->
+        <section class="task-form">
+
+            <div class="input-group">
+
+                <input
+                    type="text"
+                    id="taskInput"
+                    placeholder="Enter a new task..."
+                    maxlength="100">
+
+                <button id="addTaskBtn">
+                    <i class="fa-solid fa-plus"></i>
+                    Add Task
+                </button>
+
+            </div>
+
+            <p id="errorMessage" class="error"></p>
+
+
+            <div class="task-options">
+
+                <!-- Category -->
+                <div class="option">
+
+                    <label for="category">
+                        <i class="fa-solid fa-folder"></i>
+                        Category
+                    </label>
+
+                    <select id="category">
+
+                        <option value="Personal">
+                            Personal
+                        </option>
+
+                        <option value="Work">
+                            Work
+                        </option>
+
+                        <option value="Study">
+                            Study
+                        </option>
+
+                        <option value="Shopping">
+                            Shopping
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- Priority -->
+                <div class="option">
+
+                    <label for="priority">
+                        <i class="fa-solid fa-flag"></i>
+                        Priority
+                    </label>
+
+                    <select id="priority">
+
+                        <option value="Low">
+                            Low
+                        </option>
+
+                        <option value="Medium" selected>
+                            Medium
+                        </option>
+
+                        <option value="High">
+                            High
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- Due Date -->
+                <div class="option">
+
+                    <label for="dueDate">
+                        <i class="fa-solid fa-calendar"></i>
+                        Due Date
+                    </label>
+
+                    <input
+                        type="date"
+                        id="dueDate">
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- STATISTICS -->
+        <section class="stats">
+
+            <div class="stat-card">
+
+                <i class="fa-solid fa-list"></i>
+
+                <div>
+                    <span>Total</span>
+                    <strong id="totalTasks">0</strong>
+                </div>
+
+            </div>
+
+
+            <div class="stat-card completed-card">
+
+                <i class="fa-solid fa-circle-check"></i>
+
+                <div>
+                    <span>Completed</span>
+                    <strong id="completedTasks">0</strong>
+                </div>
+
+            </div>
+
+
+            <div class="stat-card pending-card">
+
+                <i class="fa-solid fa-clock"></i>
+
+                <div>
+                    <span>Pending</span>
+                    <strong id="pendingTasks">0</strong>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- SEARCH AND FILTER -->
+        <section class="tools">
+
+            <div class="search-box">
+
+                <i class="fa-solid fa-search"></i>
+
+                <input
+                    type="text"
+                    id="searchInput"
+                    placeholder="Search tasks...">
+
+            </div>
+
+
+            <select id="filterSelect">
+
+                <option value="all">
+                    All Tasks
+                </option>
+
+                <option value="pending">
+                    Pending
+                </option>
+
+                <option value="completed">
+                    Completed
+                </option>
+
+                <option value="high">
+                    High Priority
+                </option>
+
+                <option value="medium">
+                    Medium Priority
+                </option>
+
+                <option value="low">
+                    Low Priority
+                </option>
+
+            </select>
+
+        </section>
+
+
+        <!-- TASK LIST -->
+        <section class="task-section">
+
+            <div class="section-title">
+
+                <h2>
+                    My Tasks
+                </h2>
+
+                <span id="taskCount">
+                    0 tasks
+                </span>
+
+            </div>
+
+
+            <div id="taskList">
+
+                <!-- Tasks will be added here using JavaScript -->
+
+            </div>
+
+
+            <!-- EMPTY STATE -->
+            <div id="emptyState" class="empty-state">
+
+                <i class="fa-solid fa-clipboard-list"></i>
+
+                <h3>No tasks found</h3>
+
+                <p>
+                    Add a task to get started!
+                </p>
+
+            </div>
+
+        </section>
+
+    </div>
+
+
+    <!-- JAVASCRIPT -->
+    <script src="script.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>BeatBox Music Player</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <main class="container">
+
+        <section class="music-player">
+
+            <!-- Heading -->
+            <h1 class="logo">
+                <i class="fa-solid fa-music"></i>
+                BeatBox
+            </h1>
+
+            <!-- Album Artwork -->
+            <div class="album-container">
+                <img id="cover" src="images/cover1.jpg" alt="Album Artwork">
+            </div>
+
+            <!-- Song Information -->
+            <div class="song-info">
+                <h2 id="title">Song Title</h2>
+                <p id="artist">Artist Name</p>
+            </div>
+
+            <!-- Audio -->
+            <audio id="audio"></audio>
+
+            <!-- Time -->
+            <div class="time-container">
+                <span id="current-time">00:00</span>
+                <span id="duration">00:00</span>
+            </div>
+
+            <!-- Progress Bar -->
+            <input
+                type="range"
+                id="progress"
+                min="0"
+                max="100"
+                value="0"
+                step="0.1"
+                aria-label="Song progress">
+
+            <!-- Main Controls -->
+            <div class="controls">
+
+                <button id="previous" class="control-btn" title="Previous">
+                    <i class="fa-solid fa-backward-step"></i>
+                </button>
+
+                <button id="play-pause" class="play-btn" title="Play">
+                    <i class="fa-solid fa-play"></i>
+                </button>
+
+                <button id="next" class="control-btn" title="Next">
+                    <i class="fa-solid fa-forward-step"></i>
+                </button>
+
+            </div>
+
+            <!-- Extra Controls -->
+            <div class="extra-controls">
+
+                <!-- Shuffle -->
+                <button id="shuffle" class="extra-btn" title="Shuffle">
+                    <i class="fa-solid fa-shuffle"></i>
+                </button>
+
+                <!-- Repeat -->
+                <button id="repeat" class="extra-btn" title="Repeat">
+                    <i class="fa-solid fa-repeat"></i>
+                </button>
+
+                <!-- Favorite -->
+                <button id="favorite" class="extra-btn" title="Favorite">
+                    <i class="fa-regular fa-heart"></i>
+                </button>
+
+            </div>
+
+            <!-- Volume -->
+            <div class="volume-container">
+
+                <button id="mute" class="volume-btn" title="Mute">
+                    <i class="fa-solid fa-volume-high"></i>
+                </button>
+
+                <input
+                    type="range"
+                    id="volume"
+                    min="0"
+                    max="1"
+                    value="1"
+                    step="0.01"
+                    aria-label="Volume">
+
+            </div>
+
+            <!-- Playlist -->
+            <div class="playlist">
+
+                <h3>
+                    <i class="fa-solid fa-list"></i>
+                    Playlist
+                </h3>
+
+                <ul id="playlist"></ul>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+
+</body>
+
+</html>
